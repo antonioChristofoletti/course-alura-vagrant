@@ -60,4 +60,25 @@ There are 3 network types:
 
 ## Provisioning
 
-- Vagrant don't provide configuration, however, It allows to create shell scripts to configure the machine right after be made up.
+- Vagrant don't provide configuration of machines, however, It allows integration with others tools.
+
+#### Shell
+
+It allows to create shell scripts to configure the machine right after be made up.
+
+#### Puppet
+
+It is possible use and integrate with Puppet. 
+
+Puppet is a open-source utility software that can be used to define, manage and automatize machines configuration, It has a friendly and clean syntax, making this process and less painful and increasing the idea of IaC (Infrastructure as Code).
+
+#### Ansible
+
+The Ansible idea is the same of Puppet, but there are 2 main differences:
+
+1 - Ansible pushes the "script configuration" from the host to the guest (VM);
+2 - Ansible does not need a client in order to be executed, just python and most part of the linux distributions already have python pre-installed
+
+## Multi-Machine
+
+- It is possible to configure in the same Vagrantfile more than one machine.
