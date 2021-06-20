@@ -102,9 +102,9 @@ In others words, puppet is generally used for validate the configuration and mak
 
 ## Containerization(Docker) VS Virtualization(Vagrant)
 
-The main point is the flexibility, size and speed. Docker is better in all this aspecsts.
+The main point is about flexibility, size and speed. Docker is better in all this aspecsts.
 
-Docker reaches this because all the containers are manage and use the resources of a common linux machine, so the default library and other resources are shared, this decrease the size of each machine and increase the deploy speed.
+Docker reaches this because all the containers are managed and uses resources of a common linux machine, so the default libraries and others resources are shared, this decreases the size of each machine and increases the deploy speed.
 In fact each container is not a tradicional OS virtualization, It works different.
 
-In Windows and Mac is kind of different, docker use a hypervisor and create a linux to make up the docker environment, even so, It works well.
+In Windows and Mac is kind of different, docker uses a hypervisor and creates a linux to make up the docker environment, even so, It works well.
