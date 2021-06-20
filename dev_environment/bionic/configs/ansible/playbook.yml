@@ -27,7 +27,7 @@
 
     - name: 'Copiar arquivo mysqld.cnf'
       copy:
-        src: /vagrant/configs/mysqld.cnf
+        src: ../mysqld.cnf
         dest: /etc/mysql/mysql.conf.d/mysqld.cnf
         owner: root
         group: root

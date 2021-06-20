@@ -28,11 +28,13 @@ All Commands start with `vagrant`.
 - `ssh-config` - Show ssh configs;
 - `reload` - shutdown and restart;
 - `provision` - call the scripts to config the machine.
+- `box prune,remove,list...` - manage the boxes depending of what param is being passed.
+- `vagrant global-status --prune (doesnt show outdated)`  - show all the boxes in the computer
+
 
 Off-topic:
 
 - `ssh -p 2222 vagrant@127.0.0.1` - Tradicional SSH;
-
 
 ## VagrantFile
 
@@ -72,13 +74,36 @@ It is possible use and integrate with Puppet.
 
 Puppet is a open-source utility software that can be used to define, manage and automatize machines configuration, It has a friendly and clean syntax, making this process and less painful and increasing the idea of IaC (Infrastructure as Code).
 
+It is also called Configuration Management, because It is generally used to define ad keep the correct configuration in the environment.
+
+The configuration file is called manifest. It is necessary the puppet client in the guests and a puppet server in the hosts.
+
 #### Ansible
 
-The Ansible idea is the same of Puppet, but there are 2 main differences:
+It is a tool for provisioning, used for prepare the environment for a task.
 
-1 - Ansible pushes the "script configuration" from the host to the guest (VM);
-2 - Ansible does not need a client in order to be executed, just python and most part of the linux distributions already have python pre-installed
+The configuration file, the Play Books are converted to python. So, the machine that execute them need to have the python installed.
+
+Each configuration will have a different playbook and It will be necessary execute again.
+
+Ansible pushes the "script configuration" from the host to the guest (VM);
+
+#### Puppet VS Ansible
+
+Puppet is for configuration management;
+Ansible is for provisioning;
+
+In others words, puppet is generally used for validate the configuration and make sure that all the specifications are being followed (Self-healing) and Ansible for install and prepare the environment.
 
 ## Multi-Machine
 
 - It is possible to configure in the same Vagrantfile more than one machine.
+
+## Containerization(Docker) VS Virtualization(Vagrant)
+
+The main point is the flexibility, size and speed. Docker is better in all this aspecsts.
+
+Docker reaches this because all the containers are manage and use the resources of a common linux machine, so the default library and other resources are shared, this decrease the size of each machine and increase the deploy speed.
+In fact each container is not a tradicional OS virtualization, It works different.
+
+In Windows and Mac is kind of different, docker use a hypervisor and create a linux to make up the docker environment, even so, It works well.
