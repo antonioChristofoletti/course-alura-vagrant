@@ -2,13 +2,13 @@
 
 ## What is It?
 
-This guy manage and automatize a lot of specs related to a Hypervisor (VMware, Virtualbox) using a simple file called Vagranfile.
+This guy manages and automatizes a lot of specs related to a Hypervisor (VMware, Virtualbox) using a simple file called Vagranfile.
 
 Important check the compatibility between Vegrant and the Hypervisor.
 
 ## Hypervisor
 
-Hypervisors are softwares that execute the interactions between the virtual OS and the current OS on the machine. Generally It is responsable by create, manage communication and resources.
+Hypervisors are softwares that execute the interactions between the virtual OS and the current OS on the machine. Generally It is responsable by creates and manages the communication and the resources.
 
 There are 2 types:
 
@@ -39,6 +39,14 @@ Off-topic:
 
 All the virtual machine configurations come here.
 
+## Boxes
+
+Vagrant has the same concept of Docker, in which there is a main repository where there are a lot of boxes(images in docker) that are the OS to virtualize, It is possible creates boxes with more specs, such as, apache, php7, docker and etcetera (Depending of what you need).
+
+## Multi-Machine
+
+- It is possible to configure in the same Vagrantfile more than one machine.
+
 ## Network
 
 There are 3 network types: 
@@ -55,21 +63,21 @@ There are 3 network types:
     - `ssh-keygen -t rsa` - Creates a pair of public and private keys;
     - `ssh-keyscan virtual-machine-ip` - Check a booked key on linux;
     - `ssh-keygen -R virtual-machine-ip` - Delete a booked key on linux;
-    - `ssh -i path_private_key_file your_user@virtual-machine-ip`: SSH command line connection using a has key;
+    - `ssh -i path_private_key_file your_user@virtual-machine-ip`: SSH command line connection using a hash key;
     - Registring a new key on virtual-machine:
         1 - Create the pair: `ssh-keygen -t rsa`;
-        2 - Then just put in the this folder: `cat id_bionic.pub >> .ssh/authorized_keys`;
+        2 - Then just put on this folder: `cat id_bionic.pub >> .ssh/authorized_keys`;
         3 - Use the private key in order to connect in this machine.
 
 ## Provisioning
 
-- Vagrant don't provide configuration of machines, however, It allows integration with others tools.
+- Vagrant does not provide configuration of machines, however, It allows integration with others tools.
 
-#### Shell
+##### Shell
 
 It allows to create shell scripts to configure the machine right after be made up.
 
-#### Puppet
+##### Puppet
 
 It is possible use and integrate with Puppet. 
 
@@ -79,7 +87,7 @@ It is also called Configuration Management, because It is generally used to defi
 
 The configuration file is called manifest. It is necessary the puppet client in the guests and a puppet server in the hosts.
 
-#### Ansible
+##### Ansible
 
 It is a tool for provisioning, used for prepare the environment for a task.
 
@@ -89,16 +97,12 @@ Each configuration will have a different playbook and It will be necessary execu
 
 Ansible pushes the "script configuration" from the host to the guest (VM);
 
-#### Puppet VS Ansible
+##### Puppet VS Ansible
 
 Puppet is for configuration management;
 Ansible is for provisioning;
 
 In others words, puppet is generally used for validate the configuration and make sure that all the specifications are being followed (Self-healing) and Ansible for install and prepare the environment.
-
-## Multi-Machine
-
-- It is possible to configure in the same Vagrantfile more than one machine.
 
 ## Containerization(Docker) VS Virtualization(Vagrant)
 
