@@ -4,11 +4,11 @@
 
 This guy manage and automatize a lot of specs related to a Hypervisor (VMware, Virtualbox) using a simple file called Vagranfile.
 
-Import to check the compatibility between Vegrant and the Hypervisor.
+Important check the compatibility between Vegrant and the Hypervisor.
 
 ## Hypervisor
 
-Hypervisor are software that execute the interactions between the virtual OS and the current OS on the machine. Generally It is responsable by creating, manage communication and resources.
+Hypervisors are softwares that execute the interactions between the virtual OS and the current OS on the machine. Generally It is responsable by create, manage communication and resources.
 
 There are 2 types:
 
@@ -21,16 +21,15 @@ Type 2: It is executed above some OS, examples: VirtualBox and VMware.
 All Commands start with `vagrant`.
 
 - `init hashicorp/precise64` - Start a vagrant file environment;
-- `up` - Create de virtual machine and configure it;
+- `up` - Create the virtual machine and configure it;
 - `halt` - stop the machine;
 - `status` - Check status;
-- `ssh` - Connect thought ssh:;
+- `ssh` - Connect thought ssh;
 - `ssh-config` - Show ssh configs;
 - `reload` - shutdown and restart;
 - `provision` - call the scripts to config the machine.
 - `box prune,remove,list...` - manage the boxes depending of what param is being passed.
 - `vagrant global-status --prune (doesnt show outdated)`  - show all the boxes in the computer
-
 
 Off-topic:
 
@@ -39,6 +38,8 @@ Off-topic:
 ## VagrantFile
 
 All the virtual machine configurations come here.
+
+## Network
 
 There are 3 network types: 
 
